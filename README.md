@@ -62,12 +62,54 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### Deploy to Vercel (Recommended)
 
-## Can I connect a custom domain to my Lovable project?
+1. **Push your code to GitHub** (if not already done):
+   ```sh
+   git add .
+   git commit -m "Prepare for deployment"
+   git push origin main
+   ```
 
-Yes, you can!
+2. **Deploy to Vercel**:
+   - Go to [vercel.com](https://vercel.com) and sign up/login
+   - Click "Add New Project"
+   - Import your GitHub repository
+   - Vercel will auto-detect Vite settings
+   - Click "Deploy"
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+3. **Connect your custom domain (alekhya.dev)**:
+   - In your Vercel project dashboard, go to **Settings** → **Domains**
+   - Click "Add Domain"
+   - Enter `alekhya.dev` and `www.alekhya.dev`
+   - Follow Vercel's DNS instructions:
+     - Add a CNAME record: `www` → `cname.vercel-dns.com`
+     - Add an A record: `@` → Vercel's IP addresses (shown in dashboard)
+     - Or use Vercel's nameservers if you prefer
+   - Wait for DNS propagation (usually 5-60 minutes)
+   - Vercel will automatically provision SSL certificates
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### Alternative: Deploy to Netlify
+
+1. Push your code to GitHub
+2. Go to [netlify.com](https://netlify.com) and sign up/login
+3. Click "Add new site" → "Import an existing project"
+4. Connect your GitHub repository
+5. Build settings:
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+6. Click "Deploy site"
+7. To add custom domain: Site settings → Domain management → Add custom domain
+
+### Alternative: Deploy to Cloudflare Pages
+
+1. Push your code to GitHub
+2. Go to [Cloudflare Dashboard](https://dash.cloudflare.com) → Pages
+3. Click "Create a project" → "Connect to Git"
+4. Select your repository
+5. Build settings:
+   - Framework preset: Vite
+   - Build command: `npm run build`
+   - Build output directory: `dist`
+6. Click "Save and Deploy"
+7. To add custom domain: Go to your project → Custom domains → Set up a custom domain
