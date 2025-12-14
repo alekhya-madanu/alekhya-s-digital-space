@@ -1,38 +1,5 @@
-import ArtPiece from "@/components/ArtPiece";
+import { Link } from "react-router-dom";
 import GalleryFloor from "@/components/GalleryFloor";
-import GalleryHeader from "@/components/GalleryHeader";
-import PixelCharacter from "@/components/PixelCharacter";
-
-const artworks = [
-  {
-    title: "The Blog",
-    description: "Thoughts & musings",
-    to: "/blog",
-    color: "terracotta" as const,
-    icon: "📜",
-  },
-  {
-    title: "About Me",
-    description: "Who am I?",
-    to: "/about",
-    color: "sage" as const,
-    icon: "🌿",
-  },
-  {
-    title: "Resume",
-    description: "My journey",
-    to: "/resume",
-    color: "dusty-rose" as const,
-    icon: "✨",
-  },
-  {
-    title: "Contact",
-    description: "Say hello",
-    to: "/contact",
-    color: "olive" as const,
-    icon: "💌",
-  },
-];
 
 const Index = () => {
   return (
@@ -45,42 +12,59 @@ const Index = () => {
         }}
       />
 
-      <GalleryHeader />
+      <main className="container mx-auto px-4 md:px-6 py-16 md:py-24 relative z-10">
+        {/* Bio Card */}
+        <div className="max-w-2xl mx-auto">
+          <div className="pixel-border bg-card p-8 md:p-12 animate-fade-up">
+            {/* Name */}
+            <h1 className="font-pixel text-lg md:text-xl text-primary mb-2">
+              ALEKHYA
+            </h1>
+            <p className="font-pixel text-[8px] md:text-[10px] text-muted-foreground mb-8">
+              DEVELOPER • CREATOR • NERD
+            </p>
 
-      {/* Gallery wall with art pieces */}
-      <main className="container mx-auto px-4 md:px-6 pb-32 relative z-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-5xl mx-auto">
-          {artworks.map((art, index) => (
-            <div
-              key={art.title}
-              className="animate-fade-up"
-              style={{ animationDelay: `${index * 0.15}s`, opacity: 0, animationFillMode: "forwards" }}
-            >
-              <ArtPiece {...art} />
+            {/* Bio */}
+            <div className="space-y-4 text-foreground/90 font-serif text-lg leading-relaxed mb-10">
+              <p>
+                Hey there! I'm a developer who loves building things on the web. 
+                When I'm not coding, you'll find me exploring new technologies, 
+                playing retro games, or getting lost in a good book.
+              </p>
+              <p>
+                I believe in creating experiences that are both beautiful and functional. 
+                This little corner of the internet is where I share my thoughts, 
+                projects, and journey through tech.
+              </p>
             </div>
-          ))}
-        </div>
 
-        {/* Museum bench */}
-        <div className="mt-16 flex justify-center">
-          <div className="pixel-border bg-warm-brown w-48 h-6" />
-        </div>
+            {/* Links */}
+            <div className="flex flex-wrap gap-4">
+              <Link
+                to="/blog"
+                className="pixel-btn bg-terracotta text-cream hover:bg-terracotta/90"
+              >
+                📜 Read my Blog
+              </Link>
+              <Link
+                to="/resume"
+                className="pixel-btn bg-sage text-cream hover:bg-sage/90"
+              >
+                ✨ View Resume
+              </Link>
+            </div>
+          </div>
 
-        {/* Tip text */}
-        <div className="text-center mt-8">
-          <p className="font-pixel text-[8px] md:text-[10px] text-muted-foreground animate-blink">
-            ▼ CLICK AN ART PIECE TO EXPLORE ▼
-          </p>
+          {/* Decorative elements */}
+          <div className="flex justify-center mt-12 gap-4">
+            <span className="text-2xl">🌿</span>
+            <span className="text-2xl">✨</span>
+            <span className="text-2xl">🪴</span>
+          </div>
         </div>
       </main>
 
-      <PixelCharacter />
       <GalleryFloor />
-
-      {/* Decorative plant */}
-      <div className="fixed bottom-24 right-8 text-4xl z-10 hidden md:block">
-        🪴
-      </div>
     </div>
   );
 };
