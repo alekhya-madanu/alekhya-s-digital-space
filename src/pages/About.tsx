@@ -51,14 +51,13 @@ const About = () => {
           <h3 className="font-pixel text-[10px] text-primary mb-4">★ BIO ★</h3>
           <div className="font-serif text-foreground leading-relaxed space-y-4">
             <p>
-              I'm a passionate developer focused on building products that combine 
-              beautiful design with robust functionality. With years of experience 
-              in full-stack development, I bring ideas to life through clean, efficient code.
+            Developer. Mathematician. Observer of cute things.
+
+I like to think of myself as a "Full Stack Thinker." My code is powered by a background in Computer Science, but my perspective is shaped by philosophy and feminist literature. I love taking a concept from one domain—like thermodynamics or behavioral psychology—and applying it to software architecture.
+
             </p>
             <p>
-              When I'm not coding, you'll find me exploring new technologies, writing 
-              about software development, or contributing to open-source projects.
-            </p>
+            I am obsessed with the mechanics of intelligence. Having studied ML through the lenses of CS, Math, and EE, I don't just import libraries; I look for the underlying physical and mathematical truths. My technical expertise lies in Continual Learning and Reinforcement Learning, but my inspiration comes from biology and psychology.            </p>
           </div>
         </div>
 
